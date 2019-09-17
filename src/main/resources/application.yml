@@ -1,0 +1,16 @@
+#向注册中心注册时的标识，其他服务根据该标识来识别服务
+spring:
+  application:
+    name:
+      obd-service
+
+#向哪个注册中心注册自己，由于使用Eureka集群实现高可用，所以这里有两个地址。
+eureka:
+  client:
+    service-url:
+      defaultZone:
+        http://peer1:1111/eureka,http://peer2:1112/eureka
+
+#向注册中心注册时的端口
+server:
+  port: 8041
